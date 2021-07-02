@@ -1,0 +1,13 @@
+.venv
+**.csv
+!data/test-data/*.csv
+**.json
+.vscode
+.DS_Store
+.env
+__pycache__
+**.pyc
+notes.md
+rollback.zip
+*.png
+*.nc

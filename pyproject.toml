@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "rt-plot-data"
+version = "0.1.0"
+description = ""
+authors = ["Moritz Makowski <moritz@dostuffthatmatters.dev>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Cerberus = "^1.3.4"
+python-dotenv = "^0.18.0"
+firebase-admin = "^5.0.1"
+
+[tool.poetry.dev-dependencies]
+black = "^21.6b0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
