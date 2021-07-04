@@ -2,6 +2,8 @@
 
 ## Prepare Environment & Dependencies
 
+Dependency management with poetry: https://python-poetry.org/docs/#installation
+
 1. Inside your desired python environment (`^3.9`) run:
 
     ```bash
