@@ -5,6 +5,7 @@ from cerberus import Validator as cerberus_validator
 import time
 import math
 import random
+from rich import print
 
 assert('.env' in os.listdir('./'))
 load_dotenv()
@@ -26,6 +27,7 @@ class Validator:
         'T': __float,
         'HUM': __float,
     })
+    
 
     @staticmethod
     def execute(document):
@@ -33,6 +35,7 @@ class Validator:
             raise Exception(
                 f'Errors: {Validator.__validator.errors}'
             )
+        assert(len([k for k in document.keys() if document[k] is not None]) > 1)
 
 class DB:
     url: str = os.environ.get("SUPABASE_URL")
@@ -44,7 +47,8 @@ class DB:
         data["unix-timestamp"] = round(time.time())
         Validator.execute(data)
 
-        print(data)
+        # Only prints the not-None values
+        print({k: data[k] for k in data.keys() if data[k] is not None})
         
         try:
             insertedData = DB.supabase.table("air-quality-timeseries").insert(data).execute()
@@ -55,14 +59,17 @@ class DB:
 
 if __name__ == '__main__':
     while True:
+        
+        # None is a valid value (if there is no data for some sensors)
+        # If there is not data (all None), just do not send any db reqests.
         DB.insert_data({
             'NO2': None,
             'PM1': None,
             'PM25': None,
             'PM10': None,
             'p': None,
-            'T': round(random.uniform(10.5, 75.5), 2),
+            'T': round(random.uniform(0.5, 75.5), 2),
             'HUM': None,
         })
-        time.sleep(5)
+        time.sleep(2)
     

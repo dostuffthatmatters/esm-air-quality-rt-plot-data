@@ -12,10 +12,9 @@
 2. Place the `.env` file in the projects root directory (same level as `run.py`). The `.env` file should look like this:
 
     ```bash
-    FIREBASE_KEY_FILE='...'
+    SUPABASE_URL='...'
+    SUPABASE_SECRET='...'
     ```
-
-    _The firebase key file is a `.json` file that I can provide you with. You will need this in order for the database connection to work._
 
 3. Run scripts only from `run.py` with:
 
