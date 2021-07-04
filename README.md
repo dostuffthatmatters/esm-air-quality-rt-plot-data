@@ -2,7 +2,7 @@
 
 ## Prepare Environment & Dependencies
 
-Dependency management with poetry: https://python-poetry.org/docs/#installation
+Dependency management with Poetry: https://python-poetry.org/docs/#installation
 
 1. Inside your desired python environment (`^3.9`) run:
 
@@ -18,8 +18,8 @@ Dependency management with poetry: https://python-poetry.org/docs/#installation
     SUPABASE_SECRET='...'
     ```
 
-3. Run scripts only from `run.py` with:
+3. Push data to the rt-feed - example in `run.py`:
 
-    ```bash
-    python run.py
+    ```python
+    DB.insert_data({...});
     ```
