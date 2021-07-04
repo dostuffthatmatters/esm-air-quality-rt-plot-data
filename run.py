@@ -1,11 +1,9 @@
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
+from rich import print
+
 from supabase_py import create_client, Client
 from cerberus import Validator as cerberus_validator
-import time
-import math
-import random
-from rich import print
 
 assert('.env' in os.listdir('./'))
 load_dotenv()
@@ -58,6 +56,9 @@ class DB:
 
 
 if __name__ == '__main__':
+    import time
+    import random
+
     while True:
         
         # None is a valid value (if there is no data for some sensors)
@@ -68,7 +69,7 @@ if __name__ == '__main__':
             'PM25': None,
             'PM10': None,
             'p': None,
-            'T': round(random.uniform(0.5, 75.5), 2),
+            'T':round(random.uniform(10, 80), 2),
             'HUM': None,
         })
         time.sleep(2)
