@@ -14,8 +14,9 @@ Dependency management with Poetry: https://python-poetry.org/docs/#installation
 2. Place the `.env` file in the projects root directory (same level as `run.py`). The `.env` file should look like this:
 
     ```bash
-    SUPABASE_URL='...'
-    SUPABASE_SECRET='...'
+    SUPABASE_URL="..."
+    SUPABASE_SECRET="..."
+    SUPABASE_TABLE="air-quality-timeseries"
     ```
 
 3. Push data to the rt-feed - example in `run.py`:
