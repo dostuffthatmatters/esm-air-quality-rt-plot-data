@@ -1,4 +1,4 @@
-# Real-Time Data Feed from Python to Firebase RT DB
+# Real-Time Data Feed from Python to Supabase
 
 ## Prepare Environment & Dependencies
 
