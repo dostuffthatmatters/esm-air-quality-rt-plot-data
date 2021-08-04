@@ -53,6 +53,8 @@ class DB:
         # Only prints the not-None values
         print({k: data[k] for k in data.keys() if data[k] is not None})
 
+        assert DB.supabase.auth.user() is not None
+        assert DB.supabase.auth.session() is not None
         response = DB.supabase.table(table).insert(data).execute()
         assert (
             str(response["status_code"])[0] == "2"
