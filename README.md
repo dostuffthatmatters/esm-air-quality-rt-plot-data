@@ -15,8 +15,11 @@ Dependency management with Poetry: https://python-poetry.org/docs/#installation
 
     ```bash
     SUPABASE_URL="..."
-    SUPABASE_SECRET="..."
+    SUPABASE_PUBLIC="..."
     SUPABASE_TABLE="air-quality-timeseries"
+
+    USER_EMAIL="..."
+    USER_PASSWORD="..."
     ```
 
 3. Push data to the rt-feed - example in `run.py`:
