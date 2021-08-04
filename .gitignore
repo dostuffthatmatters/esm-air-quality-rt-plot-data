@@ -11,3 +11,7 @@ notes.md
 rollback.zip
 *.png
 *.nc
+node_modules
+*.js
+*.json
+yarn.lock

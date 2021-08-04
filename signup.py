@@ -18,6 +18,6 @@ except:
     try:
         user = supabase.auth.sign_in(email=email, password=password)
         assert user["status_code"] == 200
-        print("User exists: email/password VALID")
+        print(f"User exists: email/password VALID, {user}")
     except:
         print("User exists: email/password INVALID")
