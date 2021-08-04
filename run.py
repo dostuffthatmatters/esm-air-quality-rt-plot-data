@@ -34,7 +34,7 @@ class Validator:
     )
 
     @staticmethod
-    def execute(document):
+    def check(document):
         if not Validator.__validator.validate(document):
             raise Exception(f"Errors: {Validator.__validator.errors}")
         assert len([k for k in document.keys() if document[k] is not None]) > 1
@@ -48,7 +48,7 @@ class DB:
     @staticmethod
     def insert_data(data):
         data["unix-timestamp"] = round(time.time())
-        Validator.execute(data)
+        Validator.check(data)
 
         # Only prints the not-None values
         print({k: data[k] for k in data.keys() if data[k] is not None})
