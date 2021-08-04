@@ -7,6 +7,7 @@ Dependency management with Poetry: https://python-poetry.org/docs/#installation
 1. Inside your desired python environment (`^3.9`) run:
 
     ```bash
+    python3.9 -m venv venv
     pip install poetry  # install the poetry package manager
     poetry install      # use poetry to install dependencies
     ```
